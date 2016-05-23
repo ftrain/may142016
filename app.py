@@ -77,8 +77,8 @@ def words():
                   db.FTSTweet,
                   on=(db.Tweet.id == db.FTSTweet.tweet_id))
               .where(db.FTSTweet.match(term))
-              .order_by(db.Tweet.user_screen_name,
-                        db.Tweet.tweet_timestamp))
+              .order_by(db.Tweet.tweet_timestamp.desc(),
+                        db.Tweet.user_screen_name))
     tweets = [is_rt(tweet) for tweet in tweets]
     return render_template('word.html',
                            term=term,
