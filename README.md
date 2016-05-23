@@ -20,6 +20,7 @@ It makes it possible to search and browse historical tweets across a group of in
   - `python -m util.make_db` # make the database
   - `python -m util.load_users` # load the users from `data/handles.csv`
   - `python -m util.import_tweets` # import the tweets from those handles
+  - `python -m util.setup_nltk` # load the nltk punkt model
 
 Tweet importing will take a long time, many hours or days depending on your list of people, their prolixity, etc.
 
@@ -31,4 +32,3 @@ Run the app:
 
 - Works fine under `gunicorn`.
 - If you start to mess with itwhile the tweets are loading into SQLite it can skip tweets because SQLite wants none of that.
-
