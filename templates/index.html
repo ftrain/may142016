@@ -1,0 +1,24 @@
+<!doctype html>
+<head>
+  <title>Spyware</title>
+  <link rel="stylesheet" href="/static/style.css" type="text/css" />  
+</head>
+<body>
+  <h1>The people in your neighborhood</h1>
+  <form action="/word" method="get">
+    Search: <input class="search" name="q">
+    <input type="submit">
+  </form>
+  <table>
+{% for user in users %}
+<tr>
+  <td><a href="./name/{{ user.screen_name }}"><img src="{{ user.avatar }}"/></a></td>
+  <td><a href="./name/{{ user.screen_name }}">@{{ user.screen_name }}</a></td>
+  <td>{{ user.real_name }}</td>
+  <td>{{ user.location }}</td>    
+
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

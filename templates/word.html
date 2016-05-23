@@ -1,0 +1,25 @@
+<!doctype html>
+<head>
+  <title>Tweets</title>
+  <link rel="stylesheet" href="/static/style.css" type="text/css" />
+
+</head>
+<body>
+  <p><a href="/">[Home]</a></p>
+  <h1>&ldquo;{{term}}&rdquo;</h1>
+  <form action="/word" method="get">
+    Search: <input class="search" name="q">
+    <input type="submit">
+  </form>
+  <table>
+    {% for tweet in tweets %}
+    <tr class="rt-{{tweet.is_rt}}">
+      <td class="datetime"><a name="{{tweet.id}}"></a>{{tweet.tweet_timestamp}}</td>
+      <td class="user"><a href="/name/{{tweet.user_screen_name}}#{{tweet.id}}">@{{tweet.user_screen_name}}</a></td>      
+      <td class="text">{{tweet.tweet_text|safe|urlize}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+</body>
+</html>

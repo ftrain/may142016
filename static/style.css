@@ -1,0 +1,42 @@
+body {
+    padding:4em;
+    font-family:Helvetica;
+    
+}
+table {
+    border-collapse:collapse;
+}
+
+td.datetime {
+    min-width:8em;
+    text-align:right;
+    font-size:9pt;
+}
+td {
+    border-bottom:1px solid gray;
+    font-size:12pt;
+    padding:1em 0 1em 0;
+    vertical-align:top;
+    padding:1em;
+}
+td.text {max-width:500px;line-height:149%;}
+td a {
+    text-decoration:none;
+}
+.rt-True {
+    background:#eee;
+}
+.rt-True td {
+    color:#AAA;
+}
+div.words {
+    column-count:3;
+}
+.cloud {
+    display:block;
+    color:#77C;
+}
+input.search {
+    font-size:20pt;
+    margin-bottom:1em;
+}

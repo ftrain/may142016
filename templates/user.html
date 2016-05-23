@@ -1,0 +1,69 @@
+<!doctype html>
+<head>
+  <title>Tweets</title>
+  <link rel="stylesheet" href="/static/style.css" type="text/css" />
+</head>
+<body>
+  <p><a href="/">[Home]</a></p>
+
+  <h1>{{user.real_name}}</h1>
+  <form action="/word" method="get">
+    Search: <input class="search" name="q" value="{{user.screen_name}} ">
+    <input type="submit">
+  </form>
+  
+  <table>
+    <tr>
+    <tr>
+      <td>Avatar</td>
+      <td><img src="{{user.avatar}}"/></td>
+    </tr>
+    <tr>
+      <td>Handle</td>
+      <td>@{{user.screen_name}}</td>
+    </tr>
+      <td>Where</td>
+      <td>{{user.location}}</td>
+    </tr>
+    <tr>
+      <td>Bio</td>
+      <td>{{user.bio}}</td>
+    </tr>    
+    <tr>
+      <td>Background</td>
+      <td><img src="{{user.background}}"/></td>
+    </tr>
+    <tr>
+      <td>Stats</td>
+      <td>{{"{:,d}".format(user.friends)}} friends, {{"{:,d}".format(user.followers)}} followers</td>
+    </tr>
+    <tr>
+      <td>Words</td>
+      <td>
+	<div class="words">
+	  {% for word in words %}
+	  <a class="cloud" style="font-size:{{word.1}}pt;" href="/word?q={{word.0}}">{{word.0}}</a> 
+	  {% endfor %}
+	</div>
+      </td>
+    </tr>
+    <tr>
+      <td>Tweets</td>
+      <td>
+	<table>
+	  {% for tweet in tweets %}
+	  <tr class="rt-{{tweet.is_rt}}">
+	    <td class="datetime"><a name="{{tweet.id}}"></a>{{tweet.tweet_timestamp}}</td>
+	    <td class="text">{{ tweet.tweet_text|safe|urlize}}</td>
+	  </tr>
+	  {% endfor %}
+	</table>
+      </td>
+    </tr>
+  </table>
+
+
+
+
+</body>
+</html>
