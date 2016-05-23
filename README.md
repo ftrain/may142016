@@ -1,6 +1,6 @@
 # "May 14, 2016" Twitter search tool
 
-This was created to support [a collaborative project by Miranda July and Paul Ford as part of the Rhizome 7on7 project](https://vimeo.com/167171454).
+This was created to support [a collaborative project by Miranda July and Paul Ford with support Starlee Kine as part of the Rhizome 7on7 project](https://vimeo.com/167171454).
 
 ![Here is a screenshot.](https://raw.githubusercontent.com/ftrain/may142016/master/doc/screenshot.jpg)
 
